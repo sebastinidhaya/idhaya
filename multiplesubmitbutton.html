@@ -1,0 +1,142 @@
+  
+  <html>
+    <head>
+	
+	<script>
+	
+	function submitForm(element){
+   
+ event.preventDefault();
+ alert(element);
+ alert(JSON.stringify(element));
+ //alert(event.target.name);
+ 
+}
+	</script>
+	</head>
+	<body>
+  <form   method="post" id="user_information" name="user_information"> 
+          <input type="hidden" id="user_id" name="id">
+            <!-- Modal -->
+            <div class="modal fade" id="user_Modal" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: #f7e1b5">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title center-block">User form</h4>
+                        </div>
+                           <div class="modal-body" style="background-color: lightgoldenrodyellow;">
+     
+
+                            <div class="form-group-sm">
+
+
+
+                                <table class="table">
+                                    <thead></thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <label> Employee Name </label> 
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control" id="employee_name" name="employee_name" required="">
+                                            </td>
+                                            <td>
+                                                <label> Employee Code </label>
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control" id="employee_code" name="employee_code" required="">
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label> Department </label>
+                                            </td>
+                                            <td>
+                                                <select class="form-control" id="employee_department" name="employee_department">
+                                                    <option value="" disabled selected>Select your option</option>
+                                                    <option value="import">Import</option>
+                                                    <option value="export">Export</option>
+                                                    <option value="admin">Administration</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <label> Division </label> 
+                                            </td>
+                                            <td>
+                                                <select class="form-control" id="employee_division" name="employee_division">
+                                                    <option value="" disabled selected>Select your option</option>
+                                                    <option value="in_gate">In gate</option>
+                                                    <option value="out_gate">Out gate</option>
+                                                    <option value="house_keeping">House keeping</option>
+                                                </select>
+                                            </td>
+
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label> Username </label> 
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control" id="employee_username" name="employee_username" required="">  
+                                            </td>
+                                            <td>
+                                                <label> Password </label>
+                                            </td>
+                                            <td>
+                                                <input type="text" class="form-control" id="employee_password" name="employee_password" required="">                      </td>
+
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <label> User Type </label> 
+                                            </td>
+                                            <td>
+                                                <select class="form-control" id="employee_usertype" name="employee_usertype">
+                                                    <option value="admin">Admin</option>
+                                                    <option value="1_user">1st User</option>
+                                                    <option value="2_user">2nd User</option>
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <label> Status </label>
+                                            </td>
+                                            <td>
+                                                <select class="form-control" id="employee_userstatus" name="employee_userstatus">
+                                                    <option value="active">Active</option>
+                                                    <option value="inactive">Inactive</option>
+                                                </select> 
+                                            </td>
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+
+                            </div>    
+
+
+
+                        </div>
+
+                        <div class="modal-footer" style="background-color: #f7e1b5">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" onclick="confirmBootbox('Are you sure delete the user');"> 
+                                <span class="glyphicon glyphicon-trash"></span> Trash 
+                            </button>
+                            <input type="submit" class="btn btn-primary" id="save" name="save" onsubmit="submitForm('save')" >
+							<input type="submit" class="btn btn-primary" id="update" name="update" onsubmit="submitForm('update')" >
+                        </div> 
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </form> 
+		</body>
+		</html>
