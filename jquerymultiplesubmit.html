@@ -1,0 +1,49 @@
+
+<html>
+<head>
+  <title>Test Page</title>
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script type="text/javascript">
+
+jQuery(function($) {
+      var submitActor = null;
+      var $form = $('#test');
+      var $submitActors = $form.find('input[type=submit]');
+
+      $form.submit(function(event) {
+          if (null === submitActor) {
+              // If no actor is explicitly clicked, the browser will
+              // automatically choose the first in source-order
+              // so we do the same here
+              submitActor = $submitActors[0];
+          }
+
+          console.log(submitActor.name);
+           alert(submitActor.name);
+
+          return false;
+      });
+
+      $submitActors.click(function(event) {
+          submitActor = this;
+      });
+  });
+  
+   
+ 
+  </script>
+</head>
+
+<body>
+
+    <form id="test">
+
+    <input type="text" />
+
+    <input type="submit" name="save" value="Save" />
+    <input type="submit" name="saveAndAdd" value="Save add another" />
+
+    </form>
+
+</body>
+</html>
